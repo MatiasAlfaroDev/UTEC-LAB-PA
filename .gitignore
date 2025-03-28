@@ -1,0 +1,14 @@
+*.o
+*.exe
+*.out
+/build/
+.vscode/
+*.suo
+*.user
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.log
+*.tmp
+*.swp
+*.DS_Store
