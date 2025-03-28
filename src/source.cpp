@@ -25,12 +25,30 @@ void agregarSocio(string ci, string nombre) {
 void agregarClase(DTClase clase) {
 
     for (int i = 0; i < MAX_CLASES; i++)
-        if (clases[i].getID() == clase.getID()) 
+        if (clases[i]->getID() == clase.getID()) 
             throw invalid_argument("exists");
 
     if (cantClases >= MAX_CLASES)
         throw invalid_argument("No mas clases.");
 
-    clases[cantClases] = clase;
+    clases[cantClases] = new Clase(clase.getID(), clase.getNombre(), clase.getTurno(), cantClases);
     cantClases++;
+};
+
+void agregarInscripcion(string ciSocio, int idClase, Fecha fecha) {
+
+    bool inscValida = false;
+    for (int i = 0; i < cantClases || inscValida; i++) 
+        if (clases[i]->getID() == idClase) 
+            inscValida = true;
+         
+    for (int i = 0; i < cantSocios || inscValida; i++)
+        if(socios[i]->getCi() == ciSocio)
+            inscValida = true;
+
+    if (inscValida)
+        cout << "La inscripcion es valida" << endl;
+       // Inscripcion* insc = new Inscripcion(ciSocio, idClase, fecha);
+    else
+        throw invalid_argument("La inscripcion no es valida");
 };

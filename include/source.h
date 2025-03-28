@@ -6,5 +6,6 @@
 #include "spinning.h"
 #include "turno.h"
 
-
 void agregarSocio(string ci,string nombre);
+void agregarClase(DTClase clase);
+void agregarInscripcion(string ciSocio, int idClase, Fecha fecha);
