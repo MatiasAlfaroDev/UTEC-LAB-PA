@@ -4,7 +4,7 @@ using namespace std;
 
 Socio::Socio(string ci, string nombre){
     this->ci = ci;
-    this->ci = nombre;
+    this->nombre = nombre;
 }
 Socio::~Socio(){
 
