@@ -11,8 +11,13 @@ class Inscripcion {
         Clase * clase;
         Fecha fecha;
     public:
-        Inscripcion(Socio*,Clase*,Fecha);
+        Inscripcion();
         ~Inscripcion();
+
+        void setSocio(Socio* socio);
+        void setClase(Clase* clase);
+        void setFecha(Fecha fecha);
+
         Socio * getSocio();
         Clase * getClase();
         Fecha getFecha();

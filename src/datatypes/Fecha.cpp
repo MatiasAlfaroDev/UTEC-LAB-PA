@@ -3,12 +3,21 @@
 using namespace std;
 
 
-Fecha::Fecha(int d, int m, int a){
+Fecha::Fecha(){}
+Fecha::~Fecha(){}
+
+void Fecha::setDia(int d){
     if(d > 31 || d < 1) throw invalid_argument("Dia invalido");
-    if(m > 12 || m < 1) throw invalid_argument("Mes invalido");
-    if(a < 1900) throw invalid_argument("Año invalido");
     this->dia = d;
+}
+
+void Fecha::setMes(int m){
+    if(m > 12 || m < 1) throw invalid_argument("Mes invalido");
     this->mes = m;
+}
+
+void Fecha::setAnio(int a){
+    if(a < 1900) throw invalid_argument("Año invalido");
     this->anio = a;
 }
 

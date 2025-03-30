@@ -2,12 +2,21 @@
 #include <iostream>
 using namespace std;
 
-Inscripcion::Inscripcion(Fecha fecha){
+Inscripcion::Inscripcion(): socio(nullptr), clase(nullptr){}
+Inscripcion::~Inscripcion(){}
+
+void Inscripcion::setSocio(Socio* socio) {
+    this->socio = socio;
+}
+
+void Inscripcion::setClase(Clase* clase) {
+    this->clase = clase;
+}
+
+void Inscripcion::setFecha(Fecha fecha) {
     this->fecha = fecha;
 }
-Inscripcion::~Inscripcion(){
 
-}
 Socio * Inscripcion::getSocio(){
     return socio;
 }

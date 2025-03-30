@@ -6,8 +6,10 @@ class Socio {
         string ci;
         string nombre;
     public:
-        Socio(string,string);
+        Socio();
         ~Socio();
+        void setCi(string);
+        void setNombre(string);
         string getCi();
         string getNombre();
 };

@@ -6,12 +6,14 @@ using namespace std;
 
 class DTSocio {
     private:
-        int ci;
+        string ci;
         string nombre;
     public:
         DTSocio();
-        DTSocio(int,string);
-        int getCI();
+        ~DTSocio();
+        void setCi(string);
+        void setNombre(string);
+        string getCI();
         string getNombre();
 };
 

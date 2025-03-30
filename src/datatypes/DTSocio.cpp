@@ -1,21 +1,22 @@
 #include "DTSocio.h"
 
-DTSocio::DTSocio(){
-    this->ci = 0;
-    this->nombre = "";
-};
+DTSocio::DTSocio(){}
 
-int DTSocio::getCI(){
+DTSocio::~DTSocio(){}
+
+void DTSocio::setCi(string ci){
+    this->ci = ci;
+}
+void DTSocio::setNombre(string nombre){
+    this->nombre = nombre;
+}
+
+string DTSocio::getCI(){
     return this->ci;
 };
 
 string DTSocio::getNombre(){
     return this->nombre;
-};
-
-DTSocio::DTSocio(int ci, string nombre){
-    this->ci = ci;
-    this->nombre = nombre;
 };
 
 

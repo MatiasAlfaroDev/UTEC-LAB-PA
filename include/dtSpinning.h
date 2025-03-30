@@ -7,12 +7,11 @@ class DTSpinning :public DTClase{
     private:
         int cantBicicletas;
     public:
-        DTSpinning(int,string,Turno,int);
+        DTSpinning();
+        virtual ~DTSpinning();
+        void setCantBicicletas(int);
         int getCantBicicletas();
         void mostrarClase() override;
 };
-
-
-
 
 #endif DTSPINNING_H

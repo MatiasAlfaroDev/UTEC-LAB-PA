@@ -2,7 +2,11 @@
 #include <iostream>
 using namespace std;
 
-DTSpinning::DTSpinning(int id, string nombre, Turno turno, int cantBicicletas):DTClase(id,nombre,turno){
+DTSpinning::DTSpinning(){}
+
+DTSpinning::~DTSpinning(){}
+
+void DTSpinning::setCantBicicletas(int cantBicicletas){
     this->cantBicicletas = cantBicicletas;
 }
 

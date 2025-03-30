@@ -7,8 +7,10 @@ class Spinning :public Clase{
     private:
         int cantBicicletas;
     public:
-        Spinning(int,string,Turno,int);
+        Spinning();
         ~Spinning();
+
+        void setCantBicicletas(int);
         int getCantBicicletas();
         int cupo() override;
 };

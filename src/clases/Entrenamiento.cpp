@@ -2,10 +2,13 @@
 #include <iostream>
 using namespace std;
 
-Entrenamiento::Entrenamiento(int id, string nombre, Turno turno, bool enRambla):Clase(id,nombre,turno){
+Entrenamiento::Entrenamiento(){}
+
+Entrenamiento::~Entrenamiento(){}
+
+void Entrenamiento::setEnRambla(bool enRambla){
     this->enRambla = enRambla;
 }
-Entrenamiento::~Entrenamiento(){};
 
 bool Entrenamiento::getEnRambla(){
     return enRambla;

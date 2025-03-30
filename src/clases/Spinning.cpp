@@ -2,18 +2,20 @@
 #include <iostream>
 using namespace std;
 
-Spinning::Spinning(int id,string nombre,Turno turno,int cantBicicletas):Clase(id,nombre,turno){
+Spinning::Spinning(){}
+Spinning::~Spinning(){}
+
+void Spinning::setCantBicicletas(int cantBicicletas){
     if (cantBicicletas > 50) {
         throw invalid_argument("La cantidad de bicicletas no puede ser mayor a 50.");
     }
     this->cantBicicletas = cantBicicletas;
 }
-Spinning::~Spinning(){}
 
-Spinning::getCantBicicletas(){
+int Spinning::getCantBicicletas(){
     return cantBicicletas;
 }
 
-Spinning::cupo(){
+int Spinning::cupo(){
     return cantBicicletas;
 }

@@ -12,11 +12,17 @@ class DTClase {
         string nombre;
         Turno turno;
     public:
-        DTClase(int,string,Turno);
+        DTClase();
         virtual ~DTClase();
+
+        void setId(int id);
+        void setNombre(string nombre);
+        void setTurno(Turno turno);
+
         int getID();
         string getNombre();
         Turno getTurno();
+        
         virtual void mostrarClase();
 };
 

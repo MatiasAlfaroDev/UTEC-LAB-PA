@@ -6,7 +6,12 @@ private:
     int dia, mes, anio; 
 
 public:
-    Fecha(int, int, int);
+    Fecha();
+    ~Fecha();
+
+    void setDia(int);
+    void setMes(int);
+    void setAnio(int);
     int getDia();
     int getMes();
     int getAnio();

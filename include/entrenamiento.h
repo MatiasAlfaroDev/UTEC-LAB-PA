@@ -7,8 +7,9 @@ class Entrenamiento :public Clase{
     public:
         bool enRambla;
     private:
-        Entrenamiento(int,string,Turno,bool);
+        Entrenamiento();
         ~Entrenamiento();
+        void setEnRambla(bool);
         bool getEnRambla();
         int cupo() override;
 };

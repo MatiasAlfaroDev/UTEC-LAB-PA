@@ -9,7 +9,9 @@ class DTEntrenamiento :public DTClase {
     private:
         bool enRambla;
     public:
-        DTEntrenamiento(int,string,Turno,bool);
+        DTEntrenamiento();
+        virtual ~DTEntrenamiento();
+        void setEnRambla(bool);
         bool getEnRambla();
         void mostrarClase() override;
 };

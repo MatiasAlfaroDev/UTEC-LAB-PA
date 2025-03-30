@@ -13,11 +13,17 @@ class Clase {
         string nombre;
         Turno turno;
     public:
-        Clase(int,string,Turno,int);
+        Clase();
         virtual ~Clase();
+
         int getID();
         string getNombre();
         Turno getTurno();
+
+        void setId(int);
+        void setNombre(string);
+        void setTurno(Turno);
+
         virtual int cupo();
         DTClase getDTClase();
 };

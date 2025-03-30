@@ -2,13 +2,21 @@
 #include <iostream>
 using namespace std;
 
-DTClase::DTClase(int id, string nombre, Turno turno){
-    this->id = id;
-    this->nombre = nombre;
-    this->turno = turno;
-}
+DTClase::DTClase(){}
 
 DTClase::~DTClase(){}
+
+void DTClase::setId(int id) {
+    this->id = id;
+}
+
+void DTClase::setNombre(string nombre) {
+    this->nombre = nombre;
+}
+
+void DTClase::setTurno(Turno turno) {
+    this->turno = turno;
+}
 
 int DTClase::getID(){
     return id;

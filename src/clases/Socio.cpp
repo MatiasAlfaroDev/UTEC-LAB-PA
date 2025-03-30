@@ -2,13 +2,16 @@
 #include <iostream>
 using namespace std;
 
-Socio::Socio(string ci, string nombre){
+Socio::Socio(){}
+Socio::~Socio(){}
+
+void Socio::setCi(string ci){
     this->ci = ci;
+}
+void Socio::setNombre(string nombre){
     this->nombre = nombre;
 }
-Socio::~Socio(){
 
-}
 string Socio::getCi(){
     return ci;
 }
