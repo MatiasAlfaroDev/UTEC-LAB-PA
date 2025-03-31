@@ -69,3 +69,33 @@ void agregarInscripcion(string ciSocio, int idClase, Fecha fecha) {
         throw invalid_argument("La inscripcion no es valida");
     }
 };
+
+void borrarInscripcion(string ciSocio, int idClase){
+    for(int i = 0; i < cantInscripciones; i++){
+        if((inscripciones[i]->getSocio()->getCi() == ciSocio) && (inscripciones[i]->getClase()->getID() == idClase)){
+            delete inscripciones[i];
+            for(int j = i; j < cantInscripciones - 1; j++)
+                inscripciones[j] = inscripciones[j+1];
+            cantInscripciones--;
+            cout << "Se elimino la inscripción correctamente" << endl;
+            return;
+        }else{
+            throw invalid_argument("No se encontro la inscripción");
+        }
+    }
+};
+
+DTClase obtenerClase(int idClase){
+    for(int i = 0; i < cantClases; i++){
+        if(clases[i]->getID() == idClase){
+            DTClase dtClase;
+            dtClase.setId(clases[i]->getID());
+            dtClase.setNombre(clases[i]->getNombre());
+            dtClase.setTurno(clases[i]->getTurno());
+
+            dtClase.mostrarClase();
+            return;
+        }
+    }
+    throw invalid_argument("No se encontró la clase");
+}
