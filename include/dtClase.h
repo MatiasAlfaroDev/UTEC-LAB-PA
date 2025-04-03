@@ -2,15 +2,16 @@
 #define DTCLASE_H
 
 #include <iostream>
+#include "Turno.h"
 using namespace std;
 
-#include "Turno.h"
-
 class DTClase {
+
     private:
         int id;
         string nombre;
         Turno turno;
+
     public:
         DTClase();
         virtual ~DTClase();
@@ -22,9 +23,9 @@ class DTClase {
         int getID();
         string getNombre();
         Turno getTurno();
-        
-        virtual void mostrarClase();
-};
 
+        virtual void mostrarClase();
+
+};
 
 #endif

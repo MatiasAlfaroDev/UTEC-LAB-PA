@@ -4,18 +4,25 @@ DTSocio::DTSocio(){}
 
 DTSocio::~DTSocio(){}
 
-void DTSocio::setCi(string ci){
+// Setters.
+void DTSocio::setCi(string ci) {
+
     this->ci = ci;
 }
-void DTSocio::setNombre(string nombre){
+void DTSocio::setNombre(string nombre) {
+
     this->nombre = nombre;
 }
 
-string DTSocio::getCI(){
+
+// Getters.
+string DTSocio::getCI() {
+
     return this->ci;
 };
 
-string DTSocio::getNombre(){
+string DTSocio::getNombre() {
+
     return this->nombre;
 };
 

@@ -6,10 +6,12 @@
 #include "clase.h"
 
 class Inscripcion {
+
     private:
         Socio * socio;
         Clase * clase;
         Fecha fecha;
+        
     public:
         Inscripcion();
         ~Inscripcion();

@@ -3,18 +3,28 @@
 using namespace std;
 
 Socio::Socio(){}
+
 Socio::~Socio(){}
 
-void Socio::setCi(string ci){
+// Setters.
+void Socio::setCi(string ci) {
+
     this->ci = ci;
 }
-void Socio::setNombre(string nombre){
+
+void Socio::setNombre(string nombre) {
+
     this->nombre = nombre;
 }
 
-string Socio::getCi(){
+
+// Getters.
+string Socio::getCi() {
+
     return ci;
 }
-string Socio::getNombre(){
+
+string Socio::getNombre() {
+
     return nombre;
 }

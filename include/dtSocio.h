@@ -5,9 +5,11 @@
 using namespace std;
 
 class DTSocio {
+
     private:
         string ci;
         string nombre;
+
     public:
         DTSocio();
         ~DTSocio();
@@ -17,4 +19,4 @@ class DTSocio {
         string getNombre();
 };
 
-#endif DTSOCIO_H
+#endif 

@@ -6,15 +6,22 @@ DTSpinning::DTSpinning(){}
 
 DTSpinning::~DTSpinning(){}
 
+
+// Setters.
 void DTSpinning::setCantBicicletas(int cantBicicletas){
     this->cantBicicletas = cantBicicletas;
 }
 
-int DTSpinning::getCantBicicletas(){
+
+// Getters.
+int DTSpinning::getCantBicicletas() {
+
     return cantBicicletas;
 }
 
-void DTSpinning::mostrarClase(){
+// Métodos.
+void DTSpinning::mostrarClase() {
+
     DTClase::mostrarClase();
     cout << "Cantidad de bicicletas: " << cantBicicletas << endl; 
 }

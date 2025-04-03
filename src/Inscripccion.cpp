@@ -3,27 +3,38 @@
 using namespace std;
 
 Inscripcion::Inscripcion(): socio(nullptr), clase(nullptr){}
+
 Inscripcion::~Inscripcion(){}
 
+// Setters.
 void Inscripcion::setSocio(Socio* socio) {
+    
     this->socio = socio;
 }
 
 void Inscripcion::setClase(Clase* clase) {
+
     this->clase = clase;
 }
 
 void Inscripcion::setFecha(Fecha fecha) {
+
     this->fecha = fecha;
 }
 
-Socio * Inscripcion::getSocio(){
+
+// Getters.
+Socio * Inscripcion::getSocio() {
+
     return socio;
 }
-Clase * Inscripcion::getClase(){
+
+Clase * Inscripcion::getClase() {
+
     return clase;
 }
 
-Fecha Inscripcion::getFecha(){
+Fecha Inscripcion::getFecha() {
+
     return fecha;
 } 

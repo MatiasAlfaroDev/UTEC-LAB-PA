@@ -6,8 +6,10 @@
 using namespace std;
 
 class DTEntrenamiento :public DTClase {
+
     private:
         bool enRambla;
+
     public:
         DTEntrenamiento();
         virtual ~DTEntrenamiento();
@@ -17,4 +19,4 @@ class DTEntrenamiento :public DTClase {
 };
 
 
-#endif DTENTRENAMIENTO_H
+#endif 

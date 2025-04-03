@@ -6,13 +6,22 @@ Entrenamiento::Entrenamiento(){}
 
 Entrenamiento::~Entrenamiento(){}
 
-void Entrenamiento::setEnRambla(bool enRambla){
+// Setters.
+void Entrenamiento::setEnRambla(bool enRambla) {
+
     this->enRambla = enRambla;
 }
 
-bool Entrenamiento::getEnRambla(){
+
+// Getters.
+bool Entrenamiento::getEnRambla() {
+
     return enRambla;
 }
-int Entrenamiento::cupo(){
+
+
+// Métodos.
+int Entrenamiento::cupo() {
+
     return (enRambla ? 20 : 10);
 }

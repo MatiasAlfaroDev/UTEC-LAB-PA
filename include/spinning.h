@@ -3,9 +3,11 @@
 
 #include "clase.h"
 
-class Spinning :public Clase{
+class Spinning :public Clase {
+
     private:
         int cantBicicletas;
+
     public:
         Spinning();
         ~Spinning();

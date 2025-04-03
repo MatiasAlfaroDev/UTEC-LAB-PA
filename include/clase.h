@@ -5,13 +5,13 @@
 #include "dtClase.h"
 using namespace std;
 
-
-
 class Clase {
+
     private:
         int id;
         string nombre;
         Turno turno;
+    
     public:
         Clase();
         virtual ~Clase();

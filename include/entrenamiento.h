@@ -3,9 +3,11 @@
 
 #include "clase.h"
 
-class Entrenamiento :public Clase{
+class Entrenamiento :public Clase {
+
     public:
         bool enRambla;
+        
     private:
         Entrenamiento();
         ~Entrenamiento();
