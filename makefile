@@ -1,39 +1,48 @@
-# Configuración básica
-CXX      := g++
-CXXFLAGS := -std=c++11 -Wall -Iinclude
-LDFLAGS  := 
-TARGET   := programa
+# Compilación final
+all: Clase.o DTClase.o DTEntrenamiento.o DTSocio.o DTSpinning.o Entrenamiento.o Fecha.o Inscripccion.o main.o Socio.o source.o Spinning.o
+	g++ Clase.o DTClase.o DTEntrenamiento.o DTSocio.o DTSpinning.o Entrenamiento.o Fecha.o Inscripccion.o main.o Socio.o source.o Spinning.o -o programa
 
-# Directorios
-SRCDIR   := src
-INCDIR   := include
-BUILDDIR := build
+Clase.o:
+	g++ -std=c++11 -Wall -Iinclude -c src/Clase.cpp -o Clase.o
 
-# Archivos fuente y objetos (automáticos)
-SOURCES  := $(wildcard $(SRCDIR)/*.cpp)
-OBJECTS  := $(patsubst $(SRCDIR)/%.cpp,$(BUILDDIR)/%.o,$(SOURCES))
+DTClase.o:
+	g++ -std=c++11 -Wall -Iinclude -c src/DTClase.cpp -o DTClase.o
 
-# Regla principal
-all: $(BUILDDIR) $(TARGET)
+DTEntrenamiento.o:
+	g++ -std=c++11 -Wall -Iinclude -c src/DTEntrenamiento.cpp -o DTEntrenamiento.o
 
-$(TARGET): $(OBJECTS)
-	$(CXX) $(LDFLAGS) $^ -o $@
+DTSocio.o:
+	g++ -std=c++11 -Wall -Iinclude -c src/DTSocio.cpp -o DTSocio.o
 
-# Regla para objetos
-$(BUILDDIR)/%.o: $(SRCDIR)/%.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+DTSpinning.o:
+	g++ -std=c++11 -Wall -Iinclude -c src/DTSpinning.cpp -o DTSpinning.o
 
-# Crear directorio build si no existe
-$(BUILDDIR):
-	mkdir $(BUILDDIR)
+Entrenamiento.o:
+	g++ -std=c++11 -Wall -Iinclude -c src/Entrenamiento.cpp -o Entrenamiento.o
 
-# Limpieza (portable para Windows/Unix)
+Fecha.o:
+	g++ -std=c++11 -Wall -Iinclude -c src/Fecha.cpp -o Fecha.o
+
+Inscripccion.o:
+	g++ -std=c++11 -Wall -Iinclude -c src/Inscripccion.cpp -o Inscripccion.o
+
+main.o:
+	g++ -std=c++11 -Wall -Iinclude -c src/main.cpp -o main.o
+
+Socio.o:
+	g++ -std=c++11 -Wall -Iinclude -c src/Socio.cpp -o Socio.o
+
+source.o:
+	g++ -std=c++11 -Wall -Iinclude -c src/source.cpp -o source.o
+
+Spinning.o:
+	g++ -std=c++11 -Wall -Iinclude -c src/Spinning.cpp -o Spinning.o
+
 clean:
-ifeq ($(OS),Windows_NT)
-	del /S /Q $(BUILDDIR)\*.o $(TARGET).exe 
-	rmdir /S /Q $(BUILDDIR)
-else
-	rm -rf $(BUILDDIR) $(TARGET)
-endif
+	rm -f *.o programa
 
-.PHONY: all clean
+run:
+	make clean
+	make
+	clear
+	./programa
