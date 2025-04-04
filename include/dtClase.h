@@ -23,9 +23,10 @@ class DTClase {
         int getID();
         string getNombre();
         Turno getTurno();
-
+        string getTipoClase();
         virtual void mostrarClase();
 
+        friend std::ostream& operator<<(std::ostream& os, const DTClase& dt);
 };
 
 #endif

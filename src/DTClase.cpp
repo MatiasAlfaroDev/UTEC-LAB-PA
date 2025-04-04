@@ -23,7 +23,6 @@ void DTClase::setTurno(Turno turno) {
     this->turno = turno;
 }
 
-
 // Getters.
 int DTClase::getID() {
 
@@ -41,7 +40,6 @@ Turno DTClase::getTurno() {
 }
 
 
-
 // Métodos.
 void DTClase::mostrarClase() {
     cout << " ID: " << id << endl 
@@ -51,6 +49,19 @@ void DTClase::mostrarClase() {
          if (turno == Turno::MANANA) cout << "MANANA" << endl;
             else if (turno == Turno::TARDE) cout << "TARDE" << endl;
                 else if (turno == Turno::NOCHE) cout << "NOCHE" << endl;
+}
 
-        // if (Clase == rambla) En rambla si || clase == spinning) En spinning si
+// Implementación de la sobrecarga de <<
+std::ostream& operator << (std::ostream& os, const DTClase& dt) {
+    os << "ID: " << dt.id << "\n"
+       << "Nombre: " << dt.nombre << "\n"
+       << "Turno: ";
+    
+    switch (dt.turno) {
+        case MANANA: os << "Manana"; break;
+        case TARDE: os << "Tarde"; break;
+        case NOCHE: os << "Noche"; break;
+    }
+
+    return os;
 }

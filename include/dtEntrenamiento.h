@@ -16,6 +16,9 @@ class DTEntrenamiento :public DTClase {
         void setEnRambla(bool);
         bool getEnRambla();
         void mostrarClase() override;
+
+        friend std::ostream& operator<<(std::ostream& os, const DTEntrenamiento& dt);
+
 };
 
 

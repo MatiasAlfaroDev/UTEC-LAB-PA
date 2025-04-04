@@ -10,6 +10,8 @@
 #include "turno.h"
 #include "dtSocio.h"
 #include "dtClase.h"
+#include "dtEntrenamiento.h"
+#include "dtSpinning.h"
 
 
 #define GREEN   "\033[32m"
@@ -18,8 +20,8 @@
 #define RED     "\033[31m"
 
 
-#define MAX_SOCIOS 2
-#define MAX_CLASES 1
+#define MAX_SOCIOS 50
+#define MAX_CLASES 50
 #define MAX_INSCRIPCIONES 50
 
 class Socio;

@@ -21,6 +21,4 @@ class Socio {
         string getNombre();
 };
 
-
-
 #endif

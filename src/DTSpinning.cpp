@@ -22,6 +22,12 @@ int DTSpinning::getCantBicicletas() {
 // Métodos.
 void DTSpinning::mostrarClase() {
 
-    DTClase::mostrarClase();
-    cout << "Cantidad de bicicletas: " << cantBicicletas << endl; 
+    std::cout << *this;
+}
+
+// Implementación de la sobrecarga de <<
+std::ostream& operator << (std::ostream& os, const DTSpinning& dt) {
+    os << static_cast < const DTClase&>(dt) << "\n"
+       << "Cantidad de bicicletas: " << dt.cantBicicletas;
+    return os;
 }

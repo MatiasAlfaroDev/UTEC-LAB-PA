@@ -3,6 +3,4 @@
 
     enum Turno{MANANA,TARDE,NOCHE};
 
-    
-
 #endif

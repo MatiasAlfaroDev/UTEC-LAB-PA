@@ -9,11 +9,11 @@ void agregarSocio(string ci, string nombre) {
 
     for (int i = 0; i < cantSocios; i++)
         if(socios[i]->getCi() == ci) 
-            throw invalid_argument("El socio que intenta agregar ya es miembro");
+            throw invalid_argument("El socio que intenta agregar ya es miembro!");
     
 
     if (cantSocios >= MAX_SOCIOS) 
-        throw invalid_argument("Se ha superado el limite de socios permitido");
+        throw invalid_argument("Se ha superado el limite de socios permitido!");
 
     Socio* s = new Socio();
     s->setCi(ci);
@@ -27,10 +27,15 @@ void agregarClase(DTClase clase) {
 
     for (int i = 0; i < MAX_CLASES; i++)
         if (clases[i] != nullptr && clases[i]->getID() == clase.getID()) 
-            throw invalid_argument("Existe");
+            throw invalid_argument("Esta clase ya existe!");
 
     if (cantClases >= MAX_CLASES)
-        throw invalid_argument("No hay espacio para mas clases");
+        throw invalid_argument("No hay espacio para mas clases!");
+
+            /*
+    if (clase.getTipoClase() == "Spinning")
+        if (clase.getTipoClase() == "Entrenamiento")
+        */
 
     Clase* c = new Clase();
     c->setId(clase.getID());
@@ -65,27 +70,29 @@ void agregarInscripcion(string ciSocio, int idClase, Fecha fecha) {
         cantInscripciones++;
         cout << " La inscripcion es valida" << endl;
     } else {
-        throw invalid_argument("La inscripcion no es valida");
+        throw invalid_argument(" La inscripcion no es valida!");
     }
 };
 
 void borrarInscripcion(string ciSocio, int idClase){
     
-    for(int i = 0; i < cantInscripciones; i++){
-        if((inscripciones[i]->getSocio()->getCi() == ciSocio) && (inscripciones[i]->getClase()->getID() == idClase)) {
-            
-            delete inscripciones[i];
-            
-            for(int j = i; j < cantInscripciones - 1; j++)
-                inscripciones[j] = inscripciones[j+1];
+    for(int i = 0; i < cantInscripciones; i++)
+        if((inscripciones[i]->getClase()->getID() == idClase ))
+            for (int j = 0; j < cantSocios; j++) {
+                if (socios[j]->getCi() == inscripciones[i]->getSocio()->getCi()) {           
+                
+                delete inscripciones[i];
+                
+                for(int j = i; j < cantInscripciones - 1; j++)
+                    inscripciones[j] = inscripciones[j+1];
 
-            cantInscripciones--;
-            cout << "Se elimino la inscripción correctamente" << endl;
-            return;
+                cantInscripciones--;
+                cout << " Se elimino la inscripcion correctamente" << endl;
+                return;
 
-        } else {
-            throw invalid_argument("No se encontro la inscripcion");
-        }
+                } else {
+                    throw invalid_argument(" No se encontro la inscripcion");
+                }
     }
 };
 
@@ -102,7 +109,7 @@ DTClase obtenerClase(int idClase){
             break;
         }
     }
-    throw invalid_argument("No se encontro la clase");
+    throw invalid_argument(" No se encontro la clase!");
 }
 
 
@@ -112,15 +119,21 @@ DTSocio ** obtenerInfoSociosPorClase (int idClase,int & cantSocios) {
     int aux = 0;
 
     for(int i = 0; i < cantInscripciones; i++)
-        if((inscripciones[i]->getClase()->getID() == idClase))
-            for (int i = 0; i < cantSocios; i++) {
+        if((inscripciones[i]->getClase()->getID() == idClase )) {
+            for (int j = 0; j < cantSocios; j++) {
+                if (socios[j]->getCi() == inscripciones[i]->getSocio()->getCi()) {
 
                     DTSocio* socioInscripto = new DTSocio();
                     socioInscripto->setCi(inscripciones[i]->getSocio()->getCi());
                     socioInscripto->setNombre(inscripciones[i]->getSocio()->getNombre());
                     infoSocios[aux] = socioInscripto; 
                     aux++;
+                }
             }
+        } else {
+            throw invalid_argument(" No se encontro la inscripcion");
+        }
+    
     
     return infoSocios;
 };

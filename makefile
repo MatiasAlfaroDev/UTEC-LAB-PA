@@ -25,12 +25,12 @@ $(BUILDDIR)/%.o: $(SRCDIR)/%.cpp
 
 # Crear directorio build si no existe
 $(BUILDDIR):
-	mkdir -p $(BUILDDIR)
+	mkdir $(BUILDDIR)
 
 # Limpieza (portable para Windows/Unix)
 clean:
 ifeq ($(OS),Windows_NT)
-	del /S /Q $(BUILDDIR)\*.o $(TARGET).exe
+	del /S /Q $(BUILDDIR)\*.o $(TARGET).exe 
 	rmdir /S /Q $(BUILDDIR)
 else
 	rm -rf $(BUILDDIR) $(TARGET)

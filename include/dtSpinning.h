@@ -17,6 +17,9 @@ class DTSpinning : public DTClase {
         int getCantBicicletas();
 
         void mostrarClase() override;
+
+        friend std::ostream& operator<<(std::ostream& os, const DTSpinning& dt);
+
 };
 
 #endif 

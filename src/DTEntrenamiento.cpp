@@ -22,7 +22,11 @@ bool DTEntrenamiento::getEnRambla() {
 
 // Métodos.
 void DTEntrenamiento::mostrarClase() {
+    std::cout << *this;
+}
 
-    DTClase::mostrarClase();
-    cout << "En Rambla: " << (enRambla ? "Sí" : "No") << endl;
+std::ostream& operator << (std::ostream& os, const DTEntrenamiento& dt) {
+    os << static_cast < const DTClase&>(dt) << "\n"
+       << "En Rambla: " << (dt.enRambla ? "Si" : "No");
+    return os;
 }

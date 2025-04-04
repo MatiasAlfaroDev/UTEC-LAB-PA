@@ -26,17 +26,17 @@ void Clase::setTurno(Turno turno) {
 // Getters.
 int Clase::getID() {
 
-    return id;
+    return this->id;
 }
 
 string Clase::getNombre() {
     
-    return nombre;
+    return this->nombre;
 }
 
 Turno Clase::getTurno() {
 
-    return turno;
+    return this->turno;
 }
 
 
